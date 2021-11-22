@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    --dark-blue:hsl(233, 47%, 7%);
+    --desaturated-blue: hsl(244, 38%, 16%); 
+    --violet: hsl(277, 64%, 61%);
+    --white: hsl(0, 0%, 100%);
+    --white-two: hsla(0, 0%, 100%, 0.75);
+    --white-three: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+
+}
+
+body {
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    border: 1px ;
+    width: 1440px;
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+    height: 500px;
+}
+
+.card-left {
+    width: 50%;
+    background-color: var(--desaturated-blue);
+    padding: 5em;
+}
+
+.card-left h1 {
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.card-left p {
+    font-size: 1.2rem;
+    width: 450px;
+    color: var(--white-three);
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.violet {
+    font-size: 3rem;
+    color: var(--violet);
+}
+
+/*============================================*/
+.card-left ul {
+    display: flex;
+    list-style: none;
+    color: var(--white);
+}
+
+.card-left ul li {
+    margin-right: 4rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.list {
+    text-transform:  uppercase;
+    font-weight: 400;
+    color: var(--white-three);
+}
+
+/*============================================*/
+.card-right {
+    width: 50%;
+    background-color: var(--violet);
+}
+
+.card-right img {
+    width: 100%;
+    height: 100%;
+    opacity: .7;
+    mix-blend-mode: hard-light;
+}
+
+@media only screen and (max-width: 960px) { /* ปรับ Layout เป็น มุมมองมือถือ หรือ เมื่อขนาดจอเป็น 480px */
+    .card {
+        flex-direction:  column; /* สำหรับมุมมอง มือถือ */
+        width: 400px;
+        height: auto;
+    }
+
+    .card-left, .card-right {
+        width: 100%;
+    }
+
+    .card-left {
+        order: 2;
+        text-align: center;
+        padding: 3em;
+    }
+
+    .card-left h1 {
+        font-size: 2em;
+    }
+
+    .card-left p {
+        width: 100%;
+        font-size: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    .violet {
+        font-size: 1em;
+    }
+
+    .card-left ul {
+        flex-direction: column;
+    }
+
+    .card-left ul li {
+        margin-right: 0;
+        margin-top: 1.5em;
+    }
+
+    .card-right {
+        order: 1;
+    }
+} 
